@@ -1,7 +1,7 @@
 /**
  * @fileOverview Command Line Handlers Helper for Firefox 3.5 or later
  * @author       ClearCode Inc.
- * @version      4
+ * @version      5
  *
  * @license
  *   The MIT License, Copyright (c) 2016 ClearCode Inc.
@@ -28,7 +28,7 @@ if (typeof namespace == 'undefined') {
 
 var CLHHelper;
 (function() {
-	const currentRevision = 4;
+	const currentRevision = 5;
 
 	var loadedRevision = 'CLHHelper' in namespace ?
 			namespace.CLHHelper.revision :
@@ -171,8 +171,10 @@ var CLHHelper;
 			var value = this._getValue(aOption, aCommandLine, aDefaultValue);
 			if (!value) return null;
 			if (value.indexOf('/') < 0) {
-				value = aCommandLine.resolveFile(value);
-				return value.path;
+				// we cannot use resolveFile for missing file...
+				let file = aCommandLine.resolveFile('');
+				file.append(value);
+				return file.path;
 			}
 			else {
 				value = aCommandLine.resolveURI(value);
