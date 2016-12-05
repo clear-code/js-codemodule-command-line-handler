@@ -174,6 +174,7 @@ var CLHHelper;
 				// we cannot use resolveFile for missing file...
 				let file = aCommandLine.resolveFile('');
 				file.append(value);
+				file.normalize();
 				return file.path;
 			}
 			else {
