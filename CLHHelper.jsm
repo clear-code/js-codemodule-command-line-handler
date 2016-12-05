@@ -171,7 +171,7 @@ var CLHHelper;
 			var value = this._getValue(aOption, aCommandLine, aDefaultValue);
 			if (!value) return aDefaultValue;
 			if (value.indexOf('/') < 0) {
-				value = aCommandLine.resolveFile('./' + value);
+				value = aCommandLine.resolveFile(value);
 				return value.path;
 			}
 			else {
