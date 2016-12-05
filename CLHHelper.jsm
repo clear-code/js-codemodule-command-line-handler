@@ -1,10 +1,10 @@
 /**
  * @fileOverview Command Line Handlers Helper for Firefox 3.5 or later
  * @author       ClearCode Inc.
- * @version      2
+ * @version      3
  *
  * @license
- *   The MIT License, Copyright (c) 2010 ClearCode Inc.
+ *   The MIT License, Copyright (c) 2016 ClearCode Inc.
  * @url https://github.com/clear-code/js-codemodule-command-line-handler
  */
 
@@ -28,7 +28,7 @@ if (typeof namespace == 'undefined') {
 
 var CLHHelper;
 (function() {
-	const currentRevision = 2;
+	const currentRevision = 3;
 
 	var loadedRevision = 'CLHHelper' in namespace ?
 			namespace.CLHHelper.revision :
