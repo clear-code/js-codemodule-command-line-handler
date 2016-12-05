@@ -1,7 +1,7 @@
 /**
  * @fileOverview Command Line Handlers Helper for Firefox 3.5 or later
  * @author       ClearCode Inc.
- * @version      3
+ * @version      4
  *
  * @license
  *   The MIT License, Copyright (c) 2016 ClearCode Inc.
@@ -28,7 +28,7 @@ if (typeof namespace == 'undefined') {
 
 var CLHHelper;
 (function() {
-	const currentRevision = 3;
+	const currentRevision = 4;
 
 	var loadedRevision = 'CLHHelper' in namespace ?
 			namespace.CLHHelper.revision :
@@ -169,7 +169,7 @@ var CLHHelper;
 		{
 			if (!aDefaultValue) aDefaultValue = '';
 			var value = this._getValue(aOption, aCommandLine, aDefaultValue);
-			if (!value) return aDefaultValue;
+			if (!value) return null;
 			if (value.indexOf('/') < 0) {
 				value = aCommandLine.resolveFile(value);
 				return value.path;
