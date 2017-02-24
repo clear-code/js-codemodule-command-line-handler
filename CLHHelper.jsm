@@ -165,14 +165,14 @@ var CLHHelper;
 		 *   A full path or an absolute file URL. If the option is not
 		 *   given, then this returns the aDefaultValue as is.
 		 */
-		getFullPath : function(aOption, aCommandLine, aDefaultValue) 
+		getFullPath : function(aOption, aCommandLine, aDefaultValue)
 		{
 			if (!aDefaultValue) aDefaultValue = '';
 			var value = this._getValue(aOption, aCommandLine, aDefaultValue);
 			if (!value) return null;
 			if (value.indexOf('/') < 0) {
 				// we cannot use resolveFile for missing file...
-				let file = aCommandLine.resolveFile('');
+				let file = aCommandLine.resolveFile('.');
 				file.append(value);
 				try{
 					file.normalize();
